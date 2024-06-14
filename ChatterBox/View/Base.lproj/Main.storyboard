@@ -131,7 +131,7 @@
                                         </constraints>
                                         <color key="textColor" name="green"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8I-BU-hnR">
                                         <rect key="frame" x="0.0" y="164" width="353" height="50"/>
@@ -143,6 +143,9 @@
                                             <color key="baseForegroundColor" name="whiteGreen"/>
                                             <color key="baseBackgroundColor" name="green"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="onLoginPressed:" destination="uG4-eA-MV9" eventType="touchUpInside" id="hi9-t0-Zhn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -158,6 +161,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="76e-Xf-opd"/>
                     <connections>
+                        <outlet property="emailTextField" destination="Loe-vD-CsU" id="GcD-D2-uyI"/>
+                        <outlet property="passwordTextField" destination="FR4-AF-kZ8" id="jwZ-k8-zWJ"/>
                         <segue destination="hvF-XW-CRn" kind="show" identifier="LoginToChat" id="NWK-aa-sfJ"/>
                     </connections>
                 </viewController>
@@ -192,7 +197,7 @@
                                         </constraints>
                                         <color key="textColor" name="green"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" textContentType="password"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dR3-sK-waA">
                                         <rect key="frame" x="0.0" y="164" width="353" height="50"/>
@@ -239,14 +244,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VNQ-Kv-Ump">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="VNQ-Kv-Ump">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="870"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pzf-Cf-aYC">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pzf-Cf-aYC">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="724"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="724" id="sjp-1g-2rn"/>
+                                            <constraint firstAttribute="height" constant="724" id="2mb-7B-UqE"/>
                                         </constraints>
                                         <color key="sectionIndexBackgroundColor" name="whiteGreen"/>
                                     </tableView>
@@ -258,9 +263,6 @@
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="glJ-hR-2VM">
                                                         <rect key="frame" x="0.0" y="0.0" width="304.66666666666669" height="40"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="lZD-Ji-M4I"/>
-                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -275,6 +277,9 @@
                                                             <color key="baseForegroundColor" red="0.12529389799999999" green="0.44694929519999999" blue="0.34785734000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <color key="baseBackgroundColor" name="lightGreen"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="sendPressed:" destination="hvF-XW-CRn" eventType="touchUpInside" id="5zj-fe-rSQ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -282,10 +287,9 @@
                                         <color key="backgroundColor" name="green"/>
                                         <constraints>
                                             <constraint firstItem="5vm-lf-0nD" firstAttribute="leading" secondItem="VBE-MU-chU" secondAttribute="leading" constant="10" id="B2U-Vo-mwh"/>
-                                            <constraint firstItem="5vm-lf-0nD" firstAttribute="centerY" secondItem="VBE-MU-chU" secondAttribute="centerY" id="FtK-uC-8pR"/>
                                             <constraint firstItem="5vm-lf-0nD" firstAttribute="centerX" secondItem="VBE-MU-chU" secondAttribute="centerX" id="GeF-OY-Ama"/>
                                             <constraint firstAttribute="trailing" secondItem="5vm-lf-0nD" secondAttribute="trailing" constant="10" id="oGD-H1-7qy"/>
-                                            <constraint firstItem="5vm-lf-0nD" firstAttribute="top" secondItem="VBE-MU-chU" secondAttribute="top" constant="53" id="yqr-oU-ngt"/>
+                                            <constraint firstItem="5vm-lf-0nD" firstAttribute="centerY" secondItem="VBE-MU-chU" secondAttribute="centerY" id="ymX-IR-szr"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -293,8 +297,24 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ECR-ft-XoV"/>
                         <color key="backgroundColor" name="lightGreen"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="VNQ-Kv-Ump" secondAttribute="bottom" constant="-52" id="Suc-fl-OG2"/>
+                            <constraint firstItem="VNQ-Kv-Ump" firstAttribute="trailing" secondItem="ECR-ft-XoV" secondAttribute="trailing" id="Vho-Rd-A0V"/>
+                            <constraint firstItem="VNQ-Kv-Ump" firstAttribute="top" secondItem="QoX-Xs-ORX" secondAttribute="top" id="eev-7q-JoU"/>
+                            <constraint firstItem="VNQ-Kv-Ump" firstAttribute="leading" secondItem="ECR-ft-XoV" secondAttribute="leading" id="rhK-Vo-Vw9"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kX2-9S-1gJ"/>
+                    <navigationItem key="navigationItem" id="kX2-9S-1gJ">
+                        <barButtonItem key="rightBarButtonItem" title="LogOut" id="2Of-mV-DKb">
+                            <connections>
+                                <action selector="logOutPressed:" destination="hvF-XW-CRn" id="7SS-ji-ZO5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="messageTextfield" destination="glJ-hR-2VM" id="6z0-bA-uu0"/>
+                        <outlet property="tableView" destination="pzf-Cf-aYC" id="lqA-hr-D3s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQy-KE-F4k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -320,7 +340,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NWK-aa-sfJ"/>
+        <segue reference="x6i-i0-wgj"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="green">

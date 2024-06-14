@@ -18,6 +18,9 @@
 		BC3713862C1B3444000FDFF2 /* ChatterBoxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3713852C1B3444000FDFF2 /* ChatterBoxUITestsLaunchTests.swift */; };
 		BC7EF3022C1B369C009B3BEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BC7EF3012C1B369C009B3BEA /* GoogleService-Info.plist */; };
 		BC7EF3042C1B3C2D009B3BEA /* ChatterBox_logo_proper_format.svg in Resources */ = {isa = PBXBuildFile; fileRef = BC7EF3032C1B3C2D009B3BEA /* ChatterBox_logo_proper_format.svg */; };
+		BCA2A1EC2C1C4FEA00D7823D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA2A1EB2C1C4FEA00D7823D /* Message.swift */; };
+		BCA4635F2C1C4CE8002C7EDF /* MessageCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCA4635E2C1C4CE8002C7EDF /* MessageCellTableViewCell.xib */; };
+		BCA463602C1C4CE8002C7EDF /* MessageCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA4635D2C1C4CE8002C7EDF /* MessageCellTableViewCell.swift */; };
 		BCC4443A2C1B5229003EB29F /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = BCC444392C1B5229003EB29F /* FirebaseAnalytics */; };
 		BCC4443C2C1B5229003EB29F /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = BCC4443B2C1B5229003EB29F /* FirebaseAnalyticsOnDeviceConversion */; };
 		BCC4443E2C1B5229003EB29F /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BCC4443D2C1B5229003EB29F /* FirebaseAnalyticsSwift */; };
@@ -85,6 +88,9 @@
 		BC3713852C1B3444000FDFF2 /* ChatterBoxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatterBoxUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BC7EF3012C1B369C009B3BEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BC7EF3032C1B3C2D009B3BEA /* ChatterBox_logo_proper_format.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ChatterBox_logo_proper_format.svg; sourceTree = "<group>"; };
+		BCA2A1EB2C1C4FEA00D7823D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		BCA4635D2C1C4CE8002C7EDF /* MessageCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCellTableViewCell.swift; sourceTree = "<group>"; };
+		BCA4635E2C1C4CE8002C7EDF /* MessageCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCellTableViewCell.xib; sourceTree = "<group>"; };
 		BCC444752C1B5690003EB29F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BCC444772C1B57DF003EB29F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BCC444792C1B5812003EB29F /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 				BC7EF3012C1B369C009B3BEA /* GoogleService-Info.plist */,
 				BC3713622C1B3440000FDFF2 /* AppDelegate.swift */,
 				BC3713642C1B3440000FDFF2 /* SceneDelegate.swift */,
+				BCA2A1EA2C1C4FD300D7823D /* Models */,
 				BCC444742C1B5489003EB29F /* Controllers */,
 				BC7EF3052C1B47EA009B3BEA /* View */,
 				BC37136B2C1B3443000FDFF2 /* Assets.xcassets */,
@@ -202,8 +209,18 @@
 			isa = PBXGroup;
 			children = (
 				BC3713682C1B3441000FDFF2 /* Main.storyboard */,
+				BCA4635D2C1C4CE8002C7EDF /* MessageCellTableViewCell.swift */,
+				BCA4635E2C1C4CE8002C7EDF /* MessageCellTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BCA2A1EA2C1C4FD300D7823D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BCA2A1EB2C1C4FEA00D7823D /* Message.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		BCC444742C1B5489003EB29F /* Controllers */ = {
@@ -366,6 +383,7 @@
 				BC37136C2C1B3443000FDFF2 /* Assets.xcassets in Resources */,
 				BC7EF3022C1B369C009B3BEA /* GoogleService-Info.plist in Resources */,
 				BC7EF3042C1B3C2D009B3BEA /* ChatterBox_logo_proper_format.svg in Resources */,
+				BCA4635F2C1C4CE8002C7EDF /* MessageCellTableViewCell.xib in Resources */,
 				BC37136F2C1B3443000FDFF2 /* Base in Resources */,
 				BC37136A2C1B3441000FDFF2 /* Base in Resources */,
 			);
@@ -396,6 +414,8 @@
 				BCC444782C1B57DF003EB29F /* RegisterViewController.swift in Sources */,
 				BC3713632C1B3440000FDFF2 /* AppDelegate.swift in Sources */,
 				BC3713652C1B3440000FDFF2 /* SceneDelegate.swift in Sources */,
+				BCA463602C1C4CE8002C7EDF /* MessageCellTableViewCell.swift in Sources */,
+				BCA2A1EC2C1C4FEA00D7823D /* Message.swift in Sources */,
 				BCC4447A2C1B5812003EB29F /* ChatViewController.swift in Sources */,
 				BCC444762C1B5690003EB29F /* LoginViewController.swift in Sources */,
 			);
