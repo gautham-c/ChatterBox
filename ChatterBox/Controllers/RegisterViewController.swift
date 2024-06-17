@@ -14,7 +14,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordLabel: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Register"
+        title = Constants.registerName
         
     }
     
@@ -24,7 +24,7 @@ class RegisterViewController: UIViewController {
                         if let e = error {
                             print(e.localizedDescription)
                         } else {
-                            self.performSegue(withIdentifier: "RegisterToChat", sender: self)
+                            self.performSegue(withIdentifier: Constants.Segue.registerToChat, sender: self)
                         }
                     }
                 }

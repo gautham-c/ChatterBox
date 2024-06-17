@@ -53,6 +53,7 @@
 		BCC444762C1B5690003EB29F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC444752C1B5690003EB29F /* LoginViewController.swift */; };
 		BCC444782C1B57DF003EB29F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC444772C1B57DF003EB29F /* RegisterViewController.swift */; };
 		BCC4447A2C1B5812003EB29F /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC444792C1B5812003EB29F /* ChatViewController.swift */; };
+		BCECA18D2C2038FB00C02427 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCECA18C2C2038FB00C02427 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		BCC444752C1B5690003EB29F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BCC444772C1B57DF003EB29F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		BCC444792C1B5812003EB29F /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		BCECA18C2C2038FB00C02427 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 				BC37136D2C1B3443000FDFF2 /* LaunchScreen.storyboard */,
 				BC3713702C1B3443000FDFF2 /* Info.plist */,
 				BC7EF3032C1B3C2D009B3BEA /* ChatterBox_logo_proper_format.svg */,
+				BCECA18C2C2038FB00C02427 /* Constants.swift */,
 			);
 			path = ChatterBox;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				BCA2A1EC2C1C4FEA00D7823D /* Message.swift in Sources */,
 				BCC4447A2C1B5812003EB29F /* ChatViewController.swift in Sources */,
 				BCC444762C1B5690003EB29F /* LoginViewController.swift in Sources */,
+				BCECA18D2C2038FB00C02427 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,23 +21,23 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         super.viewDidLoad()
-        title = "ChatterBox"
+        title = Constants.appName
         navigationItem.hidesBackButton = true
         
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "MessageCellTableViewCell", bundle: nil), forCellReuseIdentifier: "ReuseableCell" )
+        tableView.register(UINib(nibName: Constants.nibName, bundle: nil), forCellReuseIdentifier: Constants.nibIdentifier )
         loadMessages()
     }
     
     func loadMessages() {
-            db.collection("messages").order(by: "date").addSnapshotListener { querySnapshot, error in
+        db.collection(Constants.Fstore.collectionName).order(by: Constants.Fstore.date).addSnapshotListener { querySnapshot, error in
                 if let e = error {
                     print(e.localizedDescription)
                 } else {
                     if let documents = querySnapshot?.documents {
                         self.messages = []
                         for data in documents {
-                            if let messageSender = data["sender"] as? String, let messageBody = data["body"] as? String{
+                            if let messageSender = data[Constants.Fstore.sender] as? String, let messageBody = data[Constants.Fstore.body] as? String{
                                 self.messages.append(Message(sender: messageSender, body: messageBody))
                             }
                         }
@@ -55,10 +55,10 @@ class ChatViewController: UIViewController {
 
     @IBAction func sendPressed(_ sender: UIButton) {
         if let messageBody = messageTextfield.text, let messageSender = Auth.auth().currentUser?.email {
-            db.collection("messages").addDocument(data: [
-                "sender" : messageSender,
-                "body" : messageBody,
-                "date" : Date().timeIntervalSince1970
+            db.collection(Constants.Fstore.collectionName).addDocument(data: [
+                Constants.Fstore.sender : messageSender,
+                Constants.Fstore.body : messageBody,
+                Constants.Fstore.date : Date().timeIntervalSince1970
             ]) { error in
                 if let e = error {
                     print(e)
@@ -89,18 +89,18 @@ extension ChatViewController : UITableViewDataSource {
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let message = messages[indexPath.row]
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ReuseableCell", for: indexPath) as! MessageCellTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.nibIdentifier, for: indexPath) as! MessageCellTableViewCell
             
             if message.sender == Auth.auth().currentUser?.email {
                 cell.receiverImageView.isHidden = true
                 cell.senderImageView.isHidden = false
-                cell.messageBubble.backgroundColor = UIColor(named: "green")
-                cell.messageText.textColor = UIColor(named: "whiteGreen")
+                cell.messageBubble.backgroundColor = UIColor(named: Constants.Colors.green)
+                cell.messageText.textColor = UIColor(named: Constants.Colors.whiteGreen)
             } else {
                 cell.receiverImageView.isHidden = false
                 cell.senderImageView.isHidden = true
-                cell.messageBubble.backgroundColor = UIColor(named: "slightyDark")
-                cell.messageText.textColor = UIColor(named: "green")
+                cell.messageBubble.backgroundColor = UIColor(named: Constants.Colors.slightyDark)
+                cell.messageText.textColor = UIColor(named: Constants.Colors.green)
             }
             
             cell.messageText.text = message.body

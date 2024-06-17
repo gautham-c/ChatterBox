@@ -14,7 +14,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Login"
+        title = Constants.loginName
     }
     
     @IBAction func onLoginPressed(_ sender: UIButton) {
@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
                        if let e = error {
                            print(e.localizedDescription)
                        } else {
-                           self.performSegue(withIdentifier: "LoginToChat", sender: self)
+                           self.performSegue(withIdentifier: Constants.Segue.loginToChat, sender: self)
                        }
                        
                      

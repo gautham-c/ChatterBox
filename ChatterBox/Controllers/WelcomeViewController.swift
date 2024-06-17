@@ -11,7 +11,7 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var appNameLabel: UILabel!
     
-    let appName = "ChatterBox"
+    let appName = Constants.appName
     var characterCount = 0.0
     override func viewDidLoad() {
         super.viewDidLoad()
